@@ -47,6 +47,7 @@ dependencies {
     runtime 'org.openjfx:javafx-base:15.0.1'
     implementation 'org.openjfx:javafx-graphics:15.0.1'
     runtime 'org.openjfx:javafx-graphics:15.0.1'
+    implementation 'org.xerial:sqlite-jdbc:3.28.0'
 }
 
 test {
