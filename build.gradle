@@ -28,7 +28,9 @@ repositories {
 apply plugin: 'org.openjfx.javafxplugin'
 apply plugin: 'application'
 
-mainClassName = 'com.ui.App'
+application {
+    mainClass = 'com.ui.App'
+}
 
 javafx {
     version = 15
@@ -36,18 +38,13 @@ javafx {
 }
 
 
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    //implementation group: 'org.openjfx', name: 'javafx-controls', version: '15.0.1', calssifier: 'linux'
-    //runtime group: 'org.openjfx', name: 'javafx-controls', version: '15.0.1', classifier: 'linux'
-    implementation 'org.openjfx:javafx-controls:15.0.1'
-    runtime 'org.openjfx:javafx-controls:15.0.1'
-    implementation 'org.openjfx:javafx-base:15.0.1'
-    runtime 'org.openjfx:javafx-base:15.0.1'
-    implementation 'org.openjfx:javafx-graphics:15.0.1'
-    runtime 'org.openjfx:javafx-graphics:15.0.1'
-    implementation 'org.xerial:sqlite-jdbc:3.28.0'
+    runtimeOnly 'org.openjfx:javafx-controls:15.0.1'
+    runtimeOnly 'org.openjfx:javafx-base:15.0.1'
+    runtimeOnly 'org.openjfx:javafx-graphics:15.0.1'
 }
 
 test {

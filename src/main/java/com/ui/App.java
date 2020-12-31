@@ -17,7 +17,7 @@ public class App extends Application {
 
         new Thread(() -> {
             try {
-                Thread.sleep(500);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 throw new RuntimeException("Should not happen!");
             }
