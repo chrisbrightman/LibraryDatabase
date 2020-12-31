@@ -45,6 +45,7 @@ dependencies {
     runtimeOnly 'org.openjfx:javafx-controls:15.0.1'
     runtimeOnly 'org.openjfx:javafx-base:15.0.1'
     runtimeOnly 'org.openjfx:javafx-graphics:15.0.1'
+    runtimeOnly 'org.xerial:sqlite-jdbc:3.28.0'
 }
 
 test {
