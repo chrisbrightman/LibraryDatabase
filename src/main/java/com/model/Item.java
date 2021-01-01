@@ -1,7 +1,12 @@
 package com.model;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 public class Item {
-    private static final String ADD_COMMAND = "INSERT INTO item (";
+    private static final String ADD_COMMAND = "INSERT INTO item (i_name, l_name, " +
+            "description, l_rank, age, last_day) VALUES (";
     private String item_name;
     private String description;
 
@@ -15,6 +20,10 @@ public class Item {
     }
 
     public String getAddCommand() {
-        return null;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyy-MM-dd HH:mm:ss");
+        LocalDateTime time = LocalDateTime.now();
+        return ADD_COMMAND + item_name + ", NULL, "
+                + description + ", NULL, 0, " + time.format(formatter) +
+                ");";
     }
 }

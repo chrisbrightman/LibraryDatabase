@@ -41,6 +41,7 @@ javafx {
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation 'org.jmockit:jmockit:1.49'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     runtimeOnly 'org.openjfx:javafx-controls:15.0.1'
     runtimeOnly 'org.openjfx:javafx-base:15.0.1'
