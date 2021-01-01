@@ -9,10 +9,7 @@ import javafx.stage.Stage;
 
 import javax.swing.text.Style;
 import java.io.File;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class App extends Application {
 
@@ -54,17 +51,49 @@ public class App extends Application {
                     System.exit(1);
                 }
             }
+            File dataFile = new File("data/library.db");
             connection = DriverManager.getConnection(dbFile);
             if (connection != null && DEBUG) {
                 DatabaseMetaData metaData = connection.getMetaData();
-                System.out.println("A " + metaData.getDriverName() + " database was initialized at " + dbFile);
+                System.out.println("A " + metaData.getDriverName() + " database was connected to at " + dbFile);
+            }
+            if (DEBUG) {
+                System.out.println("A new library.db file was created");
+                System.out.println("Creating data tables");
+            }
+            final String createItem = "CREATE TABLE IF NOT EXISTS item (" +
+                    "i_name TEXT NOT NULL PRIMARY KEY," +
+                    "description TEXT NOT NULL," +
+                    "l_rank INTEGER," +
+                    "age INTEGER," +
+                    "last_day TEXT," +
+                    "l_name TEXT," +
+                    "FOREIGN KEY(l_name) REFERENCES list(l_name)" +
+                    ");";
+            final String createList = "CREATE TABLE IF NOT EXISTS list (" +
+                    "l_name TEXT NOT NULL PRIMARY KEY," +
+                    "max_size INTEGER," +
+                    "description TEXT NOT NULL," +
+                    "last_day TEXT" +
+                    ");";
+            assert connection != null;
+            Statement statement = connection.createStatement();
+            statement.execute("PRAGMA foreign_keys = ON;");
+            statement.execute(createList);
+            if (DEBUG) {
+                System.out.println("Created list table");
+            }
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM list");
+            System.out.println(resultSet.getMetaData().getColumnName(1));
+            statement.execute(createItem);
+            if (DEBUG) {
+                System.out.println("Create item table");
             }
         }
         catch (SQLException ex) {
             ex.printStackTrace();
             System.exit(ex.getErrorCode());
         }
-        System.out.println("Hello World!");
         launch(args);
     }
 }
