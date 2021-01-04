@@ -7,14 +7,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class AddItem {
-    private Connection connection;
+    private final Connection connection;
 
     public AddItem(Connection connection) {
         this.connection = connection;
     }
 
-    public void addItem(String name, String description) {
-        Item item = new Item(name, description);
+    public void addItem(Item item) {
         try {
             Statement statement = connection.createStatement();
             statement.execute(item.getAddCommand());

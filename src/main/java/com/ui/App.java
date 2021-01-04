@@ -55,11 +55,12 @@ public class App extends Application {
             connection = DriverManager.getConnection(dbFile);
             if (connection != null && DEBUG) {
                 DatabaseMetaData metaData = connection.getMetaData();
-                System.out.println("A " + metaData.getDriverName() + " database was connected to at " + dbFile);
+                System.out.println("DEBUG: A " + metaData.getDriverName() +
+                        " database was connected to at " + dbFile);
             }
             if (DEBUG) {
-                System.out.println("A new library.db file was created");
-                System.out.println("Creating data tables");
+                System.out.println("DEBUG: A new library.db file was created");
+                System.out.println("DEBUG: Creating data tables");
             }
             final String createItem = "CREATE TABLE IF NOT EXISTS item (" +
                     "i_name TEXT NOT NULL PRIMARY KEY," +
@@ -81,13 +82,12 @@ public class App extends Application {
             statement.execute("PRAGMA foreign_keys = ON;");
             statement.execute(createList);
             if (DEBUG) {
-                System.out.println("Created list table");
+                System.out.println("DEBUG: Created list table");
             }
             ResultSet resultSet = statement.executeQuery("SELECT * FROM list");
-            System.out.println(resultSet.getMetaData().getColumnName(1));
             statement.execute(createItem);
             if (DEBUG) {
-                System.out.println("Create item table");
+                System.out.println("DEBUG: Create item table");
             }
         }
         catch (SQLException ex) {

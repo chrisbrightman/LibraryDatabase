@@ -20,7 +20,7 @@ public class Item {
     }
 
     public String getAddCommand() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDateTime time = LocalDateTime.now();
         return ADD_COMMAND + item_name + ", NULL, "
                 + description + ", NULL, 0, " + time.format(formatter) +
