@@ -4,10 +4,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.swing.text.Style;
 import java.io.File;
 import java.sql.*;
 
@@ -15,7 +13,7 @@ public class App extends Application {
 
     private static Connection connection = null;
 
-    private static final String dbFile = "jdbc:sqlite:data/library.db";
+    public static final String dbFile = "jdbc:sqlite:data/library.db";
 
     static boolean DEBUG = false;
 
