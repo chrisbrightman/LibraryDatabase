@@ -1,6 +1,18 @@
 package com.ui;
 
-import javafx.scene.control.Button;
+public class ListButton extends LibraryButton {
 
-public class ListButton extends Button {
+
+    public ListButton(SceneMap sceneMap) {
+        super(sceneMap, "manage lists");
+
+    }
+
+    @Override
+    public void fire() {
+        super.fire();
+        sceneMap.displayScene("list");
+    }
+
+
 }
