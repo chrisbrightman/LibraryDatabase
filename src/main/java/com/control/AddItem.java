@@ -1,6 +1,7 @@
 package com.control;
 
 import com.model.Item;
+import com.ui.App;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -18,6 +19,9 @@ public class AddItem implements CommandDispatch {
         try {
             Statement statement = connection.createStatement();
             statement.execute(item.getAddCommand());
+            if (App.DEBUG) {
+                System.out.println("DEBUG: item " + item + " inserted into the database");
+            }
         }
         catch (SQLException ex) {
             System.err.println("error executing command: " + item.getAddCommand());

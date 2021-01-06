@@ -71,16 +71,6 @@ public class App extends Application {
 
         primaryStage.setScene(scene);
         primaryStage.show();
-
-        new Thread(() -> {
-            while (true) {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException("Should not happen!");
-                }
-            }
-        }).start();
     }
 
     public static void main(String[] args) {

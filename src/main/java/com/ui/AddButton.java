@@ -16,8 +16,6 @@ import java.util.List;
 
 public class AddButton extends LibraryButton {
 
-    private AddItem adder;
-
     SubmitFunc addItem = (scene, dispatch) -> {
         Parent root = scene.getRoot();
         ObservableList<Node> nodeList = root.getChildrenUnmodifiable();
@@ -40,10 +38,10 @@ public class AddButton extends LibraryButton {
                 new TextField(),
                 new Label("Description"),
                 new TextField(),
-                new SubmitButton(sceneMap, adder, "add", addItem));
+                new SubmitButton(sceneMap, adder, "add", addItem),
+                new HomeButton(sceneMap));
         Scene addScene = new Scene(vBox, App.width, App.height);
         sceneMap.addScene("add", addScene);
-        this.adder = adder;
     }
 
     @Override
