@@ -65,7 +65,5 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform {
-        //includeTags 'Classes'
-    }
+    useJUnitPlatform()
 }

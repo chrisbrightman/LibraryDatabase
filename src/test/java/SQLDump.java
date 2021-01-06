@@ -1,6 +1,4 @@
 import com.ui.App;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
 
 import java.sql.*;
 
@@ -36,9 +34,7 @@ public class SQLDump {
         }
     }
 
-    @Test
-    @Tag("SQLDump")
-    public static void dumpSql() throws SQLException {
+    public static void main(String... args) throws SQLException {
         Connection conn = DriverManager.getConnection(App.dbFile);
         Statement itemStatement = conn.createStatement();
         ResultSet itemDump = itemStatement.executeQuery("SELECT * FROM item");

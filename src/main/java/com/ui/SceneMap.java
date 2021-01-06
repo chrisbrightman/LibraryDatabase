@@ -33,4 +33,9 @@ public class SceneMap {
         }
         return false;
     }
+
+    public Scene getScene(String label) {
+        return scenes.get(label);
+    }
+
 }

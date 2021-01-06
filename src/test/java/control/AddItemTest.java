@@ -18,6 +18,7 @@ public class AddItemTest {
     @Mocked Item mockedItem;
     @Mocked Statement mockedStatement;
 
+    /*
     @Test
     void testAddItemException () throws SQLException {
         new Expectations() {{
@@ -30,4 +31,6 @@ public class AddItemTest {
         uut.addItem(mockedItem);
         assertTrue(true);
     }
+
+     */
 }

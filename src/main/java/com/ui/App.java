@@ -1,5 +1,6 @@
 package com.ui;
 
+import com.control.AddItem;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -57,7 +58,8 @@ public class App extends Application {
         mainBox.setPrefWidth(height - 100);
         mainBox.setMinWidth(height - 150);
         SplitPane buttons = new SplitPane();
-        buttons.getItems().addAll(new AddButton(sceneMap), new ListButton(sceneMap));
+        AddItem adder = new AddItem(connection);
+        buttons.getItems().addAll(new AddButton(sceneMap, adder), new ListButton(sceneMap));
 
         mainBox.getChildren().addAll(new Label("Hello World"), buttons);
 

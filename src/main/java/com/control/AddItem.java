@@ -5,8 +5,9 @@ import com.model.Item;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
-public class AddItem {
+public class AddItem implements CommandDispatch {
     private final Connection connection;
 
     public AddItem(Connection connection) {
@@ -21,5 +22,10 @@ public class AddItem {
         catch (SQLException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public void assignArgs(List<String> args) {
+        addItem(new Item(args.get(0), args.get(1)));
     }
 }
