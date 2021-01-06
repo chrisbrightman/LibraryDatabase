@@ -20,6 +20,7 @@ public class AddItem implements CommandDispatch {
             statement.execute(item.getAddCommand());
         }
         catch (SQLException ex) {
+            System.err.println("error executing command: " + item.getAddCommand());
             ex.printStackTrace();
         }
     }

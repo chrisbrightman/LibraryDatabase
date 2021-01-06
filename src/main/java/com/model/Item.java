@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Item {
     private static final String ADD_COMMAND = "INSERT INTO item (i_name, l_name, " +
-            "description, l_rank, age, last_day) VALUES (";
+            "description, l_rank, age, last_day) VALUES ('";
     private String item_name;
     private String description;
 
@@ -22,8 +22,8 @@ public class Item {
     public String getAddCommand() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDateTime time = LocalDateTime.now();
-        return ADD_COMMAND + item_name + ", NULL, "
-                + description + ", NULL, 0, " + time.format(formatter) +
-                ");";
+        return ADD_COMMAND + item_name + "', NULL, '"
+                + description + "', NULL, 0, '" + time.format(formatter) +
+                "');";
     }
 }

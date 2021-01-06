@@ -29,7 +29,7 @@ public class SQLDump {
                             + item.getString("description") + "\t"
                             + item.getInt("l_rank") + "\t"
                             + item.getInt("age") + "\t"
-                            + item.getString("last_day") + "\t\n"
+                            + item.getString("last_day") + "\t"
                     );
         }
     }

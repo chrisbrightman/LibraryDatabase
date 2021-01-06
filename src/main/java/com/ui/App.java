@@ -73,12 +73,13 @@ public class App extends Application {
         primaryStage.show();
 
         new Thread(() -> {
-            try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException("Should not happen!");
+            while (true) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException("Should not happen!");
+                }
             }
-            System.exit(0);
         }).start();
     }
 
