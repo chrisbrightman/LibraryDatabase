@@ -5,6 +5,7 @@ public class SubmitButton extends LibraryButton {
 
     private String toRefresh;
 
+
     public SubmitButton(SceneMap sceneMap, String toRefresh) {
         super(sceneMap, "Submit");
         this.toRefresh = toRefresh;
