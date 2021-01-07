@@ -15,7 +15,7 @@ public class AddItem implements CommandDispatch {
         this.connection = connection;
     }
 
-    public void addItem(Item item) {
+    private void addItem(Item item) {
         try {
             Statement statement = connection.createStatement();
             statement.execute(item.getAddCommand());

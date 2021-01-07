@@ -46,6 +46,10 @@ public class Item {
                 "');";
     }
 
+    public String getDeleteCommand() {
+        return null;
+    }
+
     private static int getInt(String columnName, ResultSet set) {
         try {
             return set.getInt(set.findColumn(columnName));
