@@ -4,7 +4,9 @@ import com.control.AddItem;
 import com.model.Item;
 import com.sun.prism.sw.SWMaskTexture;
 import mockit.*;
+import org.junit.Rule;
 import org.junit.jupiter.api.*;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,11 +16,13 @@ import java.sql.Statement;
 
 @Tag("Classes")
 public class AddItemTest {
+
+    @Rule public final ExpectedException thrown = ExpectedException.none();
+
     @Mocked Connection mockConnection;
     @Mocked Item mockedItem;
     @Mocked Statement mockedStatement;
 
-    /*
     @Test
     void testAddItemException () throws SQLException {
         new Expectations() {{
@@ -30,7 +34,10 @@ public class AddItemTest {
         AddItem uut = new AddItem(mockConnection);
         uut.addItem(mockedItem);
         assertTrue(true);
+        new Verifications() {{
+            mockedStatement.execute("GOOD"); 
+        }};
+        assertTrue(true);
     }
 
-     */
 }

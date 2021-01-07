@@ -66,4 +66,5 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    jvmArgs "-javaagent:${classpath.find { it.name.contains("jmockit") }.absolutePath}"
 }
