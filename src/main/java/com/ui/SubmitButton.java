@@ -5,9 +5,9 @@ import com.control.CommandDispatch;
 
 public class SubmitButton extends LibraryButton {
 
-    private String toRefresh;
-    private CommandDispatch dispatcher;
-    private SubmitFunc func;
+    private final String toRefresh;
+    private final CommandDispatch dispatcher;
+    private final SubmitFunc func;
 
 
     public SubmitButton(SceneMap sceneMap, CommandDispatch dispatcher, String toRefresh, SubmitFunc func) {

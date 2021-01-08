@@ -32,7 +32,7 @@ public class AddButton extends LibraryButton {
         return values;
     };
 
-    public AddButton(SceneMap sceneMap, AddItem adder) {
+    public AddButton(SceneMap sceneMap, CommandDispatch adder) {
         super(sceneMap, "add items");
         VBox vBox = new VBox(new Label("Name"),
                 new TextField(),

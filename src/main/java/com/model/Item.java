@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 public class Item {
     private static final String ADD_COMMAND = "INSERT INTO item (i_name, l_name, " +
             "description, l_rank, age, last_day) VALUES ('";
+    private static final String DELETE_COMMAND = "DELETE FROM item WHERE i_name=";
     private String item_name = null;
     private String description = null;
     private String list_name = null;
@@ -47,7 +48,7 @@ public class Item {
     }
 
     public String getDeleteCommand() {
-        return null;
+        return DELETE_COMMAND + "'" + item_name + "';";
     }
 
     private static int getInt(String columnName, ResultSet set) {
@@ -85,6 +86,7 @@ public class Item {
     @Override
     public String toString() {
         return "{ name: '" + item_name + "', description: '" + description + "', list_name: '"
-                + list_name + "', list_rank: " + list_rank + ", age: " + age + ", last_day: " + last_day + " }";
+                + list_name + "', list_rank: " + list_rank + ", age: "
+                + age + ", last_day: " + last_day + " }";
     }
 }

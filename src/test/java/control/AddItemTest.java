@@ -32,10 +32,10 @@ public class AddItemTest {
             result = "GOOD";
         }};
         AddItem uut = new AddItem(mockConnection);
-        uut.addItem(mockedItem);
+        //uut.addItem(mockedItem);
         assertTrue(true);
         new Verifications() {{
-            mockedStatement.execute("GOOD"); 
+            mockedStatement.execute("GOOD");
         }};
         assertTrue(true);
     }
